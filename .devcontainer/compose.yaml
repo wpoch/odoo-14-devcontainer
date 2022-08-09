@@ -1,0 +1,30 @@
+services:
+    odoo:
+        build:
+          context: ..
+          dockerfile: .devcontainer/Dockerfile
+          args:
+            VARIANT: 3.7-bullseye
+            NODE_VERSION: lts/*
+        command: sleep infinity
+        volumes:
+            - ..:/workspace:cached
+        network_mode: service:postgres
+        depends_on:
+            postgres:
+                condition: service_healthy
+    postgres:
+        image: postgres:13
+        environment:
+            POSTGRES_DB: ${DB_DATABASE:-odoo_development}
+            POSTGRES_USER: ${DB_USERNAME:-odoo}
+            POSTGRES_PASSWORD: ${DB_PASSWORD:-odoo}
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+        healthcheck:
+            test: pg_isready
+            interval: 10s
+            timeout: 5s
+            retries: 5
+volumes:
+  postgres-data:

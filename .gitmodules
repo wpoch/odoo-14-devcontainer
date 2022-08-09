@@ -1,0 +1,8 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/OCA/OCB
+	branch = 14.0
+[submodule "addons/addons_oca_server-brand"]
+	path = addons/addons_oca_server-brand
+	url = https://github.com/OCA/server-brand
+	branch = 14.0

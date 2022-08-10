@@ -9,6 +9,7 @@ services:
         command: sleep infinity
         volumes:
             - ..:/workspace:cached
+            - odoo-data:/var/lib/odoo
         network_mode: service:postgres
         depends_on:
             postgres:
@@ -28,3 +29,4 @@ services:
             retries: 5
 volumes:
   postgres-data:
+  odoo-data:

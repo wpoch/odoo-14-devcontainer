@@ -6,3 +6,11 @@
 	path = addons/addons_oca_server-brand
 	url = https://github.com/OCA/server-brand
 	branch = 14.0
+[submodule "addons/addons_oca_sale-workflow"]
+	path = addons/addons_oca_sale-workflow
+	url = https://github.com/OCA/sale-workflow
+	branch = 14.0
+[submodule "addons/addons_oca_product-attribute"]
+	path = addons/addons_oca_product-attribute
+	url = https://github.com/OCA/product-attribute
+	branch = 14.0

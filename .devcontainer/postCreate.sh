@@ -2,14 +2,14 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-echo 'To regenerate odoo-dev.conf run ./regenerate-odoo-conf.sh, running this now:'
-./regenerate-odoo-conf.sh
+echo 'To regenerate odoo-dev.conf run ./bin/regen-conf, running this now'
+./bin/regen-conf
 
 echo 'To install any missing or changed server requirements'
-echo 'pip3 install -r server/requirements.txt'
+echo './bin/pip-install-reqs'
 
-echo 'To run odoo server'
-echo './server/odoo-bin --config odoo-dev.conf'
+echo 'To initalize db and run server, using odoo-dev.conf'
+echo './bin/run-odoo'
 
-echo 'To initalize db and run server:'
-echo './server/odoo-bin -i base --config odoo-dev.conf'
+echo 'To run odoo server without init=base, using odoo-dev.conf'
+echo './bin/run-odoo --without-init'

@@ -14,3 +14,15 @@
 	path = addons/addons_oca_product-attribute
 	url = https://github.com/OCA/product-attribute
 	branch = 14.0
+[submodule "addons/addons_oca_server-tools"]
+	path = addons/addons_oca_server-tools
+	url = https://github.com/OCA/server-tools
+	branch = 14.0
+[submodule "addons/addons_oca_stock-logistics-workflow"]
+	path = addons/addons_oca_stock-logistics-workflow
+	url = https://github.com/OCA/stock-logistics-workflow
+	branch = 14.0
+[submodule "/workspace/addons/addons_purchase-workflow"]
+	path = /workspace/addons/addons_purchase-workflow
+	url = https://github.com/OCA/purchase-workflow
+	branch = 14.0

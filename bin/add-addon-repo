@@ -1,0 +1,24 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+addon_repo=${1:-}
+branch=${2:-main}
+target_dir=${3:-addons}
+
+if [[ -z "$addon_repo" || -z "$branch" || -z "$target_dir" ]]; then
+    echo -e "usage: $0 addon_repo branch target_dir"
+    echo -e 'Add an addon repo, exported format is a group of addons in subdirectories (e.g. OCA repos)'
+    echo -e 'Branch name defaults to main'
+    echo -e 'Target directory defaults to `addons` directory'
+    exit 1
+fi
+
+full_target_path="$(realpath ${target_dir})/addons_$(basename $addon_repo .git)"
+
+if [[ -f "$full_target_path" || -d "$full_target_path" ]]; then
+    echo -e "FATAL: Already exists - ${full_target_path}"
+    exit 1
+fi
+
+git submodule add --branch ${branch} ${addon_repo} ${full_target_path}

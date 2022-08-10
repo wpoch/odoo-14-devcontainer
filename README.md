@@ -11,7 +11,7 @@ This is not secure - it's intended for development usage only!
 * Support for third-party addons via git submodules (as below)
 * PostgreSQL
 * Odoo Filestore and PostgreSQL are volumes for some minor persistence.
-* Scripted generation of `addons_path` in Odoo conf via `./regenerate-odoo-conf.sh`
+* Scripted generation of `addons_path` in Odoo conf via `./bin/regen-conf`
 * Demo data and no ssl by default (anti-features)
 
 ### Repo Layout
@@ -27,18 +27,19 @@ odoo-14-devcontainer/
 
 ## How to add new third-party addons
 
-To add a new addon we need to track the git repo as a submodule:
+To add a new addon we need to track the git repo as a submodule, g.g:
 
 ```shell
-$ git submodule add --branch 14.0 https://github.com/OCA/server-brand addons/addons_oca_server-brand
+$ ./bin/add-addon-repo addon_repo branch
+$ ./bin/add-addon-repo https://github.com/OCA/purchase-workflow 14.0
 ```
 
-These will also need to be added to `odoo-dev.conf` if used, this can be done by using the `regenerate-odoo-conf.sh` command.
+These will also need to be added to `odoo-dev.conf` if used, this can be done by using the `./bin/regen-conf` command.
 
 ## How to update existing addons
 
 ```shell
-$ git submodule update --remote
+$ ./bin/update-addons
 ```
 
 ## Local Development
@@ -48,8 +49,8 @@ This is designed for usage in a VSCode devcontainer.
 You might need:
 
 ```shell
-pip3 install -r server/requirements.txt
-./server/odoo-bin -i base --config odoo-dev.conf
+./bin/pip-install-reqs
+./bin/run-odoo
 ```
 
 This should forward port `8069` to your [localhost](http://localhost:8069).

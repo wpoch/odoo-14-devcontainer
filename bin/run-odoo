@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+echo -e "Running: ./server/odoo-bin --init=base --config=odoo-dev.conf"
+./server/odoo-bin --init=base --config=odoo-dev.conf

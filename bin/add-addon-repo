@@ -14,7 +14,7 @@ if [[ -z "$addon_repo" || -z "$branch" || -z "$target_dir" ]]; then
     exit 1
 fi
 
-full_target_path="$(realpath ${target_dir})/addons_$(basename $addon_repo .git)"
+full_target_path="${target_dir}/addons_$(basename $addon_repo .git)"
 
 if [[ -f "$full_target_path" || -d "$full_target_path" ]]; then
     echo -e "FATAL: Already exists - ${full_target_path}"

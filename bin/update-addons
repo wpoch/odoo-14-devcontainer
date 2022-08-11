@@ -2,4 +2,4 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-git submodule update --remote --merge --recursive
+git submodule update --init --recursive --remote

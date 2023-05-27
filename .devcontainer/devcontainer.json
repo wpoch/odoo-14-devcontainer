@@ -11,13 +11,13 @@
           "permissions": {
             "contents": "read"
           },
-          "APS-Phoenix/main":{
-            "permissions": {
-              "contents": "write",
-              "pullRequests": "write"
-            }
-          }  
-        }
+        },
+        "APS-Phoenix/main":{
+          "permissions": {
+            "contents": "write",
+            "pullRequests": "write"
+          }
+        }  
       }
     },
     "vscode": {

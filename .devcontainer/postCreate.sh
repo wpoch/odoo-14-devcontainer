@@ -7,6 +7,12 @@ echo 'To regenerate odoo-dev.conf run ./bin/regen-conf, running this now'
 
 echo 'To install any missing or changed server requirements'
 echo './bin/pip-install-reqs'
+./bin/pip-install-reqs
+
+echo 'Update AddOns'
+echo './bin/update-addons'
+./bin/update-addons
+
 
 echo 'To initalize db and run server, using odoo-dev.conf'
 echo './bin/run-odoo'

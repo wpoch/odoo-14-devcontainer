@@ -10,7 +10,7 @@
         "odoo/enterprise":{
           "permissions": {
             "contents": "read"
-          },
+          }
         },
         "APS-Phoenix/main":{
           "permissions": {

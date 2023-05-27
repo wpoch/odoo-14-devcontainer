@@ -5,6 +5,21 @@
   "service": "odoo",
   "workspaceFolder": "/workspace",
   "customizations": {
+    "codespaces": {
+      "repositories":{
+        "odoo/enterprise":{
+          "permissions": {
+            "contents": "read"
+          },
+          "APS-Phoenix/main":{
+            "permissions": {
+              "contents": "write",
+              "pullRequests": "write"
+            }
+          }  
+        }
+      }
+    },
     "vscode": {
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",

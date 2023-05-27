@@ -2,4 +2,5 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+git submodule foreach 'git config -f .gitmodules submodule.$sm_path.shallow true'
 git submodule update --init --recursive --remote

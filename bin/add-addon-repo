@@ -22,3 +22,4 @@ if [[ -f "$full_target_path" || -d "$full_target_path" ]]; then
 fi
 
 git submodule add --branch ${branch} ${addon_repo} ${full_target_path}
+git config -f .gitmodules submodule.${full_target_path}.shallow true

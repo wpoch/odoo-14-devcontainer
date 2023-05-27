@@ -2,11 +2,14 @@
 	path = server
 	url = git@github.com:odoo/odoo.git
 	branch = 14.0
+	shallow = true
 [submodule "addons/enterprise"]
 	path = addons/enterprise
 	url = git@github.com:odoo/enterprise.git
 	branch = 14.0
+	shallow = true
 [submodule "addons/aps"]
 	path = addons/aps
 	url = git@github.com:APS-Phoenix/main.git
 	branch = prod
+	shallow = true
